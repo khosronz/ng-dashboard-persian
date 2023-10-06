@@ -1,0 +1,183 @@
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow fixed-top">
+  <div class="container-fluid">
+    <!-- offcanvas trigger -->
+
+    <button
+      class="navbar-toggler me-3"
+      type="button"
+      data-bs-toggle="offcanvas"
+      data-bs-target="#offcanvasExample"
+      aria-controls="offcanvasExample"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!-- offcanvas trigger -->
+    <a class="navbar-brand fw-bold text-uppercase me-5" href="#"
+      >محل قرارگیری لوگو</a
+    >
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 mx-5">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">خانه</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">لینک</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            آیتم ها
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><hr class="dropdown-divider" /></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" aria-disabled="true">غیرفعال</a>
+        </li>
+      </ul>
+      <form class="d-flex" role="search">
+        <input
+          class="form-control me-2"
+          type="search"
+          placeholder="Search"
+          aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
+<!-- Navbar -->
+
+<!-- Offcanvas -->
+
+<div
+  class="offcanvas offcanvas-start sidebar-nav offcanvas-positions bg-body-tertiary shadow rounded-1 border-0"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-body p-0">
+    <nav class="navbar-dark">
+      <ul class="navbar-nav pt-2">
+        <li>
+          <a routerLink="/" class="text-muted fw-bold px-1">
+            <i class="bi bi-speedometer2 px-2"></i>
+            پنل مدیریت سامانه
+          </a>
+        </li>
+        <li class="my-2">
+          <hr class="border-end border-dark-subtle bg-primary" />
+        </li>
+        <li>
+          <div class="text-muted small fw-bold px-3">
+            بخش کامپوننت های بوت استرپ
+          </div>
+        </li>
+        <li class="mt-2">
+          <a
+            class="nav-link px-3 text-black sidebar-link"
+            data-bs-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+          <span><i class="bi bi-ui-checks-grid"></i></span>
+            <span class="mx-2">فرم ها</span>
+            <span class="right-icon ms-auto"><i class="bi bi-chevron-down"></i></span>
+          </a>
+          <div class="collapse" id="collapseExample">
+            <div>
+              <ul class="navbar-nav ps-3">
+                <li>
+                  <a routerLink="/form-control" class="nav-link text-black px-3">
+                    <span ><i class="bi bi-circle-fill"></i></span>
+            <span class="mx-2 ">form-control</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/form-select" class="nav-link text-black px-3">
+                    <span ><i class="bi bi-circle-fill"></i></span>
+            <span class="mx-2 ">form-select</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/checks&radio" class="nav-link text-black px-3">
+                    <span ><i class="bi bi-circle-fill"></i></span>
+            <span class="mx-2 ">checks $ radio</span>
+                  </a>
+                </li>
+
+                <li>
+                  <a routerLink="/input-groups" class="nav-link text-black px-3">
+                    <span ><i class="bi bi-circle-fill"></i></span>
+            <span class="mx-2 ">input-group</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/floating-labels" class="nav-link text-black px-3">
+                    <span ><i class="bi bi-circle-fill"></i></span>
+            <span class="mx-2 ">floating labels</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="/layout" class="nav-link text-black px-3">
+                    <span ><i class="bi bi-circle-fill"></i></span>
+            <span class="mx-2 ">layout</span>
+                  </a>
+                </li>
+                <li>
+                  <a routerLink="validation" class="nav-link text-black px-3">
+                    <span ><i class="bi bi-circle-fill"></i></span>
+            <span class="mx-2 ">validation</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!-- Offcanvas -->
+
+
+<main class="mt-4 pt-5">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</main>
