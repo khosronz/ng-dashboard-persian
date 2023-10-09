@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+@font-face {
+  font-family: "Vazir";
+  src: url("../src/assets/fonts/Vazir.eot");
+  /* IE9 Compat Modes */
+  src: url("../src/assets/fonts/Vazir.eot?#iefix") format("embedded-opentype"),
+      url("../src/assets/fonts/Vazir.woff2") format("woff2"),
+      url("../src/assets/fonts/Vazir.woff") format("woff"),
+      url("../src/assets/fonts/Vazir.ttf") format("truetype");
+
+}
+body
+{
+  font-family: Vazir;
+}
+.custom-container{
+  margin-right: 300px;
+  margin-left: 20px;
+}
