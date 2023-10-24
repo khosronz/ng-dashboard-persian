@@ -1,0 +1,36 @@
+
+.sidebar-nav{
+  width: 270px;
+}
+
+@media (min-width:992px){
+  .offcanvas-backdrop::before{
+    display: none;
+  }
+  .sidebar-nav{
+    transform: none;
+    visibility:visible !important;
+}}
+.offcanvas-positions{
+  margin-top: 56px;
+  height: 100vh;
+}
+.sidebar-link{
+  display: flex;
+  align-items: center;
+}
+.sidebar-link .right-icon{
+  display: inline-flex;
+  transition: all ease 0.25s;
+}
+.sidebar-link[aria-expanded = "true"] .right-icon{
+  transform: rotate(180deg);
+}
+
+@media (min-width:992px){
+  main{
+    margin-right: 300px;
+    margin-left: 20px;
+  }
+}
+
