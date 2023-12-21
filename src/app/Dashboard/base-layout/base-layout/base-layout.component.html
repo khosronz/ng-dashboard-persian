@@ -1,0 +1,357 @@
+<!-- Navbar -->
+<div class="container-fluid mt-5 ">
+  <div class="row">
+    <nav class="navbar navbar-expand-lg bg-custom-navbar navbar-dark fixed-top">
+      <div class="container-fluid">
+        <!-- offcanvas trigger -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasExample"
+          aria-controls="offcanvasExample"
+        >
+          <span
+            class="navbar-toggler-icon"
+            data-bs-target="#offcanvasExample"
+          ></span>
+        </button>
+        <!-- offcanvas trigger -->
+
+        <a class="navbar-brand fw-bold mx-auto" href="#">برند</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/home"> صفحه اصلی </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">لینک سریع</a>
+            </li>
+          </ul>
+          <form class="d-flex ms-auto" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="جستجو ..."
+              aria-label="Search"
+            />
+            <button class="btn btn-success" type="submit">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                <i class="bi bi-person-fill"></i>
+              </a>
+              <ul class="dropdown-menu dropdown-menu-end">
+                <li><a class="dropdown-item" href="#">Action</a></li>
+                <li><a class="dropdown-item" href="#">Another action</a></li>
+                <li><hr class="dropdown-divider" /></li>
+                <li>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+<!-- Navbar -->
+
+<!-- sidebar-Right -->
+<div class="container-fluid">
+
+
+  <div
+    class="offcanvas offcanvas-start sidebar-nav"
+    tabindex="-1"
+    id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel"
+  >
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title fs-6 fw-bold" id="offcanvasExampleLabel">
+        پنل مدیریت
+      </h5>
+    </div>
+
+    <div class="offcanvas-body p-0">
+      <nav>
+        <ul class="navbar-nav">
+          <li>
+            <div class="small px-3">دسته بندی ها :</div>
+          </li>
+          <li>
+            <a class="nav-link px-3 active" href="">
+              <span class="me-2">
+                <i class="bi bi-speedometer2"></i>
+              </span>
+              <span class="fw-bold">داشبورد</span>
+            </a>
+          </li>
+          <li>
+            <hr />
+          </li>
+          <li>
+            <div class="small px-3">فرم ها و کامپوننت های بوت استرپ</div>
+          </li>
+          <!-- Forms part------------------------------------------------------------------------------------------------ -->
+
+          <li class="mt-2 px-3">
+            <a
+              class="nav-link sidebar-link"
+              data-bs-toggle="collapse"
+              href="#collapseExample"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              <span class="me-2"
+                ><i class="bi bi-menu-button-wide-fill"></i
+              ></span>
+              <span> بخش فرم ها </span>
+              <span class="left-icon ms-auto"
+                ><i class="bi bi-chevron-down"></i
+              ></span>
+            </a>
+            <div class="collapse" id="collapseExample">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link " routerLink="/formcontrol">
+                      <span class="me-2"
+                        ><i class="bi bi-asterisk"></i></span>
+                      <span> Form control</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseExample">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link " routerLink="/select">
+                      <span class="me-2"
+                        ><i class="bi bi-asterisk"></i></span>
+                      <span> Select</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseExample">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link " routerLink="/check">
+                      <span class="me-2"
+                        ><i class="bi bi-asterisk"></i></span>
+                      <span> Checks & radios</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseExample">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link " routerLink="/input">
+                      <span class="me-2"
+                        ><i class="bi bi-asterisk"></i></span>
+                      <span>Input</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
+
+          </li>
+          <!-- Components part----------------------------------------------------------------------------------- -->
+          <li class="mt-2 px-3">
+            <a
+              class="nav-link sidebar-link"
+              data-bs-toggle="collapse"
+              href="#collapseExample2"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              <span class="me-2"
+                ><i class="bi bi-building"></i></span>
+              <span> بخش  کامپوننت ها </span>
+              <span class="left-icon ms-auto"
+                ><i class="bi bi-chevron-down"></i
+              ></span>
+            </a>
+
+
+            <div class="collapse" id="collapseExample2">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link" routerLink="/accordion">
+                      <span class="me-2"><i class="bi bi-arrow-bar-left"></i></span>
+                      <span>Accordion </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseExample2">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link" routerLink="/alert">
+                      <span class="me-2"><i class="bi bi-arrow-bar-left"></i></span>
+                      <span>Alert</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseExample2">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link" routerLink="/button">
+                      <span class="me-2"><i class="bi bi-arrow-bar-left"></i></span>
+                      <span>button</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseExample2">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link" routerLink="/card">
+                      <span class="me-2"><i class="bi bi-arrow-bar-left"></i></span>
+                      <span>Card</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
+            <div class="collapse" id="collapseExample2">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link" routerLink="/carousel">
+                      <span class="me-2"><i class="bi bi-arrow-bar-left"></i></span>
+                      <span>carousel</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseExample2">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link" routerLink="/cpllapse">
+                      <span class="me-2"><i class="bi bi-arrow-bar-left"></i></span>
+                      <span>Collapse</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseExample2">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link" routerLink="/modal">
+                      <span class="me-2"><i class="bi bi-arrow-bar-left"></i></span>
+                      <span>modal</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseExample2">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link" routerLink="/navbar">
+                      <span class="me-2"><i class="bi bi-arrow-bar-left"></i></span>
+                      <span>navbar</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="collapse" id="collapseExample2">
+              <div>
+                <ul class="navbar-nav px-3">
+                  <li>
+                    <a class="nav-link" routerLink="/offcanvas">
+                      <span class="me-2"><i class="bi bi-arrow-bar-left"></i></span>
+                      <span>offcanvas</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+          <li class="mt-2 px-3">
+            <a
+            routerLink="/map"
+              class="nav-link sidebar-link"
+              data-bs-toggle="collapse"
+              role="button"
+              aria-expanded="false"
+              aria-controls="collapseExample"
+            >
+              <span class="me-2"
+                ><i class="bi bi-building"></i></span>
+              <span>نقشه</span>
+              <span class="left-icon ms-auto"
+                ><i class="bi bi-chevron-down"></i
+              ></span>
+            </a>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+<!-- sidebar-Right -->
+
+<main class="mt-3 px-2 "></main>

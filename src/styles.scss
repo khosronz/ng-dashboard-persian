@@ -1,0 +1,44 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+@import "~leaflet/dist/leaflet.css";
+@font-face {
+  font-family: "Vazir";
+  src: url("../src/assets/fonts/Vazir.eot");
+  /* IE9 Compat Modes */
+  src: url("../src/assets/fonts/Vazir.eot?#iefix") format("embedded-opentype"),
+      url("../src/assets/fonts/Vazir.woff2") format("woff2"),
+      url("../src/assets/fonts/Vazir.woff") format("woff"),
+      url("../src/assets/fonts/Vazir.ttf") format("truetype");
+
+}
+body
+{
+  font-family: Vazir;
+}
+:root{
+  --offcanvas-width:270px;
+  --topNavbarHeight:56px;
+}
+
+
+
+@media (min-width:992px) {
+ .home, .formcontrol, .select, .check-radios, .inputg, .accordion-custom, .alert-custom, .button-custom, .card-custom, .carousel-custom, .collapse-custom, .modal-custom, .navbar-custom, .offcanvas-custom .map-custom{
+    margin-right: var(--offcanvas-width);
+
+  }
+}
+
+@media (min-width:992px){
+  .map-custom{
+    margin-top: 70px;
+   
+  }
+}
+
+
+
+
+
+
+

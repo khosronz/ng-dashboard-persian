@@ -1,0 +1,33 @@
+body{
+    background-color: aliceblue;
+}
+#mapContainer{
+    height: 100vh;
+    border: 3px solid #84c142;
+}
+#logoContainer{
+    text-align: center;
+}
+#logoContainer img{
+width: 500px;
+margin-top: 80px;
+}
+
+.mapPopup .leaflet-popup-content-wrapper{
+    background-color: #fff;
+    box-shadow: none;
+    color: #84c142;
+    border-radius: 3px;
+    border: 1px solid;
+}
+.mapPopup .leaflet-popup-tip{
+    background-color: #84c142;
+    box-shadow: none;
+    border-radius: 3px;
+    border: 1px solid #84c142;
+}
+.mapPopup .leaflet-popup-close-button{
+  
+    color: #84c142;
+  
+}

@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leaflet</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <script src="jquery-2.2.4.min.js"></script>
+
+    <link rel="stylesheet" href="leaflet.css">
+    <script src="leaflet.js"></script>
+
+    <link rel="stylesheet" href="leaflet.draw.css">
+    <script src="leaflet.draw.js"></script>
+
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-rtl.min.css">
+
+    <script src="bootstrap.min.js"></script>
+
+
+    <script src="https://unpkg.com/esri-leaflet@2.4.1/dist/esri-leaflet.js"
+  integrity="sha512-xY2smLIHKirD03vHKDJ2u4pqeHA7OQZZ27EjtqmuhDguxiUvdsOuXMwkg16PQrm9cgTmXtoxA6kwr8KBy3cdcw=="
+  crossorigin=""></script>
+
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.css"
+    integrity="sha512-IM3Hs+feyi40yZhDH6kV8vQMg4Fh20s9OzInIIAc4nx7aMYMfo+IenRUekoYsHZqGkREUgx0VvlEsgm7nCDW9g=="
+    crossorigin="">
+  <script src="https://unpkg.com/esri-leaflet-geocoder@2.3.3/dist/esri-leaflet-geocoder.js"
+    integrity="sha512-HrFUyCEtIpxZloTgEKKMq4RFYhxjJkCiF5sDxuAokklOeZ68U2NPfh4MFtyIVWlsKtVbK5GD2/JzFyAfvT5ejA=="
+    crossorigin=""></script>
+</head>
+<body>
+    <div id="map" style="width: 100%; height: 100%;"></div>
+
+    <script>
+        var locationList = [
+            {lat: 37.7195265626227, lng: 46.93359375000001, title: "تبریز", Address: "تبریز خیابان اول پلاک 1", placeType: "h"},
+            {lat: 35.60496409485937, lng: 51.50390625000001, title: "تهران", Address: "تهران خیابان اول پلاک 1", placeType: "h"},
+            {lat: 32.54851512118243, lng: 51.767578125, title: "اصفهان", Address: "اصفهان خیابان اول پلاک 1", placeType: "h"},
+            {lat: 35.783389740701296, lng: 58.88671875000001, title: "مشهد", Address: "مشهد خیابان اول پلاک 1", placeType: "h"},
+            {lat: 34.562259303839774, lng: 50.93261718750001, title: "قم", Address: "قم خیابان اول پلاک 1", placeType: "h"},
+        
+            {lat: 29.231097541675027, lng: 52.99804687500001, title: "شیراز", Address: "شیراز خیابان اول پلاک 1", placeType: "r"},
+            {lat: 27.061667813752774, lng: 55.98632812500001, title: "بندرلنگه", Address: "بندرلنگه خیابان اول پلاک 1", placeType: "r"},
+            {lat: 29.11600059007595, lng: 60.51269531250001, title: "زاهدان", Address: "زاهدان خیابان اول پلاک 1", placeType: "r"},
+            {lat: 31.767357597242206, lng: 48.91113281250001, title: "اهواز", Address: "اهواز خیابان اول پلاک 1", placeType: "r"},
+            {lat: 31.767357597242206, lng: 54.31640625000001, title: "یزد", Address: "یزد خیابان اول پلاک 1", placeType: "r"}
+        ];
+
+        var tileLayer1 = L.tileLayer('https://a.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+            attribution: 'rezabazyar - 09173411112 - rezaabazyae@gmail.com'
+        });
+
+        var tileLayer2 = L.tileLayer('https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png',{
+            attribution: 'rezabazyar - 09173411112 - rezaabazyae@gmail.com'
+        });
+
+        var map = L.map('map', {
+            center: [32.287, 52.954],
+            zoom: 5,
+            layers: [tileLayer1]
+        });
+
+        var hotelEditableLayers = new L.FeatureGroup();
+        map.addLayer(hotelEditableLayers);
+        
+        var mainLayers = {
+            "سرور شماره 1": tileLayer1,
+            "سرور شماره 2": tileLayer2
+        };
+
+        var drawingLayers = {
+            "موقعیت ها": hotelEditableLayers
+        };
+
+        L.control.layers(mainLayers,drawingLayers, { position: 'topleft',collapsed: false}).addTo(map);
+
+        var drawOptions = {
+            position: 'topleft',
+            draw:{
+                polygon: {
+                    shapeOptions:{
+                        color: '#564638'
+                    }
+                },
+                polyline: true,
+                circle: true,
+                marker: true,
+                rectangle: true
+            },
+            edit:{
+                featureGroup: hotelEditableLayers
+            }
+        };
+
+        var drawControl = new L.Control.Draw(drawOptions);
+        map.addControl(drawControl);
+
+        var hotelIconSetting = L.Icon.extend({
+            options:{
+                iconSize:[40,40],
+                iconAnchor:[20, 35]
+            }
+        });
+
+        var restaurantIconSetting = L.Icon.extend({
+            options:{
+                iconSize:[40,40],
+                iconAnchor:[20, 35]
+            }
+        });
+
+        var hotelIcon = new hotelIconSetting({iconUrl:'images/1.png'});
+        var restaurantIcon = new restaurantIconSetting({iconUrl:'images/2.png'});
+
+        for (let i = 0; i < locationList.length; i++) {
+            if (locationList[i].placeType === "h") {
+                L.marker([locationList[i].lat, locationList[i].lng], { icon: hotelIcon, placeIndex: i }).on('click', showDetails).addTo(hotelEditableLayers);
+            } else {
+                L.marker([locationList[i].lat, locationList[i].lng], { icon: restaurantIcon, placeIndex: i}).on('click', showDetails).addTo(hotelEditableLayers);
+            }
+        }
+
+        var searchControl = L.esri.Geocoding.geosearch().addTo(map);
+
+        var results = L.layerGroup().addTo(map);
+
+        searchControl.on('results', function (data){
+            results.clearLayers();
+            for (let i = 0; i < data.results.length; i++) {
+                results.addLayer(L.marker(data.results[i].latlng));
+            }
+        });
+
+        map.on('draw:created', function(e){
+            var layer = e.layer;
+            var type = e.layerType;
+
+            if(type === 'marker')
+            {
+                e.layer.setIcon(hotelIcon);
+            }
+
+            hotelEditableLayers.addLayer(layer);
+        });
+
+        function showDetails(e) {
+            var placeIndex = e.target.options.placeIndex;
+            showModal(locationList[placeIndex].title, "آدرس : " + locationList[placeIndex].Address);
+        }
+
+        function showModal(title, body) {
+            $('#myModalTitle').html(title);
+            $('#myModalBody').html(body);
+            $('#myModal').modal("show");
+        }
+    </script>
+
+    <!-- Modal -->
+<div class="modal fade" id="myModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="myModalTitle">Modal title</h5>
+          <button type="button" style="display: contents;" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" id="myModalBody">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
+          <button type="button" class="btn btn-primary">
+              ذخیره
+              <svg class="bi bi-check2-circle" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" d="M15.354 2.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3-3a.5.5 0 1 1 .708-.708L8 9.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                <path fill-rule="evenodd" d="M8 2.5A5.5 5.5 0 1 0 13.5 8a.5.5 0 0 1 1 0 6.5 6.5 0 1 1-3.25-5.63.5.5 0 1 1-.5.865A5.472 5.472 0 0 0 8 2.5z"/>
+              </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
