@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 @import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
-@import "~leaflet/dist/leaflet.css";
+@import "../node_modules/leaflet/dist/leaflet.css";
 @font-face {
   font-family: "Vazir";
   src: url("../src/assets/fonts/Vazir.eot");
@@ -23,7 +23,8 @@ body
 
 
 @media (min-width:992px) {
- .home, .formcontrol, .select, .check-radios, .inputg, .accordion-custom, .alert-custom, .button-custom, .card-custom, .carousel-custom, .collapse-custom, .modal-custom, .navbar-custom, .offcanvas-custom .map-custom{
+ .home, .formcontrol, .select, .check-radios, .inputg, .accordion-custom, .alert-custom, .button-custom, .card-custom, .carousel-custom,
+ .collapse-custom, .modal-custom, .navbar-custom, .offcanvas-custom .map-custom{
     margin-right: var(--offcanvas-width);
 
   }
@@ -32,7 +33,7 @@ body
 @media (min-width:992px){
   .map-custom{
     margin-top: 70px;
-   
+
   }
 }
 
